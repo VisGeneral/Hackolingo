@@ -1,0 +1,19 @@
+{
+  "name": "hackolingo",
+  "version": "1.0.0",
+  "description": "The Best Duolingo XP Farmer Made By Eli-Zac.",
+  "main": "grinder.js",
+  "scripts": {
+    "xp": "node xp.js",
+    "unlimitedhearts": "node unlimitedhearts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eli-Zac/hackolingo.git"
+  },
+  "author": "Eli-Zac",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
