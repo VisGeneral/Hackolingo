@@ -1,5 +1,5 @@
 name: '10K XP Daily'
-run-name: 'Your study script is Active! Click to see status.'
+run-name: 'Your Daily! Click to see status.'
 
 on:
   schedule:
@@ -22,5 +22,5 @@ jobs:
 
       - run: node index.js
         env:
-          LESSONS: 50 
+          LESSONS: 50
           TOKEN: ${{ secrets.TOKEN }} 
