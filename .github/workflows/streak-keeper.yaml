@@ -1,5 +1,5 @@
-name: 'Automatically Keep Your Streak'
-run-name: 'Your streak keeper is Active! Click to see status.'
+name: 'Complete 50 Lessons Every 45 Minutes'
+run-name: 'Your study script is Active! Click to see status.'
 
 on:
   schedule:
