@@ -1,5 +1,9 @@
 # Hackolingo
-[![Discord Server](https://img.shields.io/discord/1067349282660814929)](https://message.style/discord)
+![GitHub Repo stars](https://img.shields.io/github/stars/Eli-Zac/hackolingo?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FEli-Zac%2FHackolingo)
+![GitHub watchers](https://img.shields.io/github/watchers/Eli-Zac/hackolingo?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Eli-Zac/hackolingo?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Eli-Zac/hackolingo?style=for-the-badge)
+![Discord](https://img.shields.io/discord/1067349282660814929?style=for-the-badge&label=Discord&link=https%3A%2F%2Fdiscord.spectracraft.com.au)
 <img src="https://raw.githubusercontent.com/blurskydev/DUOS/main/gui-asset/duolingo-love-icon.png" alt="Duo waving" width="200px">
 
 [View cole_bmaul other projects](https://github.com/cole-bauml)
