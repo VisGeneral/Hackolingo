@@ -8,6 +8,7 @@
 ![Static Badge](https://img.shields.io/badge/USER-grey?style=for-the-badge)
 ![GitHub followers](https://img.shields.io/github/followers/Eli-Zac?style=for-the-badge)
 ![Discord](https://img.shields.io/discord/1067349282660814929?style=for-the-badge&label=Discord&link=https%3A%2F%2Fdiscord.spectracraft.com.au)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fspectracraft.com.au%2F&style=for-the-badge&label=WEBSITE&link=https%3A%2F%2Fspectracraft.com.au%2F)
 <br/>
 <img src="https://raw.githubusercontent.com/blurskydev/DUOS/main/gui-asset/duolingo-love-icon.png" alt="Duo waving" width="200px">
 
