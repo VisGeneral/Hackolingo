@@ -1,5 +1,5 @@
 # Hackolingo
-[![Release](https://github.com/eli-zac/hackolingo/actions/workflows/release.yaml/badge.svg)](https://github.com/eli-zac/hackolingo/releases)
+[![Discord Server](https://img.shields.io/discord/1067349282660814929)](https://message.style/discord)
 <img src="https://raw.githubusercontent.com/blurskydev/DUOS/main/gui-asset/duolingo-love-icon.png" alt="Duo waving" width="200px">
 
 [View cole_bmaul other projects](https://github.com/cole-bauml)
