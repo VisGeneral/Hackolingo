@@ -10,7 +10,7 @@
 ![Discord](https://img.shields.io/discord/1067349282660814929?style=for-the-badge&label=Discord&link=https%3A%2F%2Fdiscord.spectracraft.com.au)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fspectracraft.com.au%2F&style=for-the-badge&label=WEBSITE&link=https%3A%2F%2Fspectracraft.com.au%2F)
 <br/>
-<img src="https://raw.githubusercontent.com/blurskydev/DUOS/main/gui-asset/duolingo-love-icon.png" alt="Duo waving" width="200px">
+<img src="https://design.duolingo.com/cdb78a8bae9e67867cd0.svg" alt="Duo waving" width="200px">
 
 [View cole_bmaul other projects](https://github.com/cole-bauml)
 
