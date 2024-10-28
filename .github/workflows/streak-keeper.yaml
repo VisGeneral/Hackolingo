@@ -1,26 +1,31 @@
-name: 'Streak Keeper'
-run-name: 'Streak Keeper Active! Click to see status.'
+name: Gain XP
+run-name: Your hack is Active! Click to see status.
 
 on:
   schedule:
-    - cron: '0 0 * * *' 
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  workflow_dispatch: # Allows manual trigger of the workflow
 
 jobs:
-  run-script:
+  complete_lesson:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-        
-      - run: npm install node-fetch
-        
 
-      - run: node xp.js
+      - name: Install Dependencies
+        run: npm install node-fetch
+
+      - name: Run XP Script
         env:
-          LESSONS: 1
-          TOKEN: ${{ secrets.TOKEN }} 
+          lessonsToComplete: 1 # Set to complete 1 lesson per day
+          token: ${{ secrets.TOKEN }} # Store your token in GitHub Secrets
+          userId: ${{ secrets.USER_ID }} # Store your user ID in GitHub Secrets
+        run: npm run xp # Ensure your script is defined in package.json
