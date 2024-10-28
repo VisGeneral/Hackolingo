@@ -44,8 +44,8 @@ Auto XP Farmer for Duolingo.
 
 
 This upgraded and Optimized Hack have
-- Streak Freeze (Auto do 1 lesson every day to save your streak)
-- Solve every 45 minutes ( Auto do 50 lessons every 45 minutes, can change your own lesson you want in the code
+- Streak Keeper (Auto do 1 lesson every day to save your streak)
+- 10K XP Daily ( Auto do 50 lessons every day, can change your own lesson you want in the code
 
 ### How to use:
 1. At the top of the page, navigate to the Actions button. 
