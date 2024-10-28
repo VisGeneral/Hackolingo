@@ -3,7 +3,7 @@ run-name: 'Your study script is Active! Click to see status.'
 
 on:
   schedule:
-    - cron: '*/45 * * * *' 
+    - cron: '0 1 * * *' 
   workflow_dispatch:
 
 jobs:
