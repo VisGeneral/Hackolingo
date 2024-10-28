@@ -1,5 +1,5 @@
-name: 'Complete 50 Lessons Every 45 Minutes'
-run-name: 'Your study script is Active! Click to see status.'
+name: 'Streak Keeper'
+run-name: 'Streak Keeper Active! Click to see status.'
 
 on:
   schedule:
@@ -22,5 +22,5 @@ jobs:
 
       - run: node xp.js
         env:
-          LESSONS: 50 
+          LESSONS: 1
           TOKEN: ${{ secrets.TOKEN }} 
