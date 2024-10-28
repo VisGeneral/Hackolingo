@@ -3,6 +3,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/Eli-Zac/hackolingo?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/Eli-Zac/hackolingo?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Eli-Zac/hackolingo?style=for-the-badge)
+![GitHub followers](https://img.shields.io/github/followers/Eli-Zac)
 ![Discord](https://img.shields.io/discord/1067349282660814929?style=for-the-badge&label=Discord&link=https%3A%2F%2Fdiscord.spectracraft.com.au)
 <br/>
 <img src="https://raw.githubusercontent.com/blurskydev/DUOS/main/gui-asset/duolingo-love-icon.png" alt="Duo waving" width="200px">
