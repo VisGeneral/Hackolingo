@@ -57,7 +57,7 @@ const init = async () => {
                         failed: false,
                         heartsLeft: 0,
                         hasBoost: true,
-                        maxInLessonStreak: 15,
+                        maxInLessonStreak: 17,
                         shouldLearnThings: true,
                         progressUpdates: [],
                         sessionExperimentRecord: [],
