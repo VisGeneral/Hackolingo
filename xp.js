@@ -23,7 +23,7 @@ const init = async () => {
             learningLanguage: userLanguages.learningLanguage,
             levelIndex: 1,
             shakeToReportEnabled: true,
-            skillId: "20017c47905904a4bbdfa3ca1b4bd85e",
+            skillId: "515da0a1b8020c2f61ab499640bd2265",
             smartTipsVersion: 2,
             type: "LEGENDARY_LEVEL",
         };
