@@ -10,22 +10,25 @@ on:
         default: 5
 
 jobs:
-  check-bats-version:
-    runs-on: self-hosted
+  complete_lesson:
+    runs-on: ubuntu-latest
 
     steps:
 
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-
-      - uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-        
-      - run: npm install node-fetch
 
-      - run: npm run xp
+      - name: Install Dependencies
+        run: npm install node-fetch
+
+      - name: Run XP Script
         env:
           lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
+        run: npm run xp
