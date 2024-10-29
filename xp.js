@@ -17,7 +17,7 @@ const init = async () => {
         const sessionBody = {
             challengeTypes: ["listen"],
             fromLanguage: userLanguages.fromLanguage,
-            isFinalLevel: false,
+            isFinalLevel: true,
             isV2: true,
             juicy: true,
             learningLanguage: userLanguages.learningLanguage,
