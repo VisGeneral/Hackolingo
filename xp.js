@@ -21,7 +21,7 @@ const init = async () => {
             isV2: true,
             juicy: true,
             learningLanguage: userLanguages.learningLanguage,
-            levelIndex: 1,
+            levelIndex: 0,
             shakeToReportEnabled: true,
             skillId: "515da0a1b8020c2f61ab499640bd2265",
             smartTipsVersion: 2,
