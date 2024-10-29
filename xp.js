@@ -17,13 +17,13 @@ const init = async () => {
         const sessionBody = {
             challengeTypes: ["listen"],
             fromLanguage: userLanguages.fromLanguage,
-            isFinalLevel: true,
+            isFinalLevel: false,
             isV2: true,
             juicy: true,
             learningLanguage: userLanguages.learningLanguage,
-            levelIndex: 0,
+            levelIndex: 1,
             shakeToReportEnabled: true,
-            skillId: "515da0a1b8020c2f61ab499640bd2265",
+            skillId: "20017c47905904a4bbdfa3ca1b4bd85e",
             smartTipsVersion: 2,
             type: "LEGENDARY_LEVEL",
         };
