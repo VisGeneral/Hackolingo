@@ -3,7 +3,7 @@ run-name: Your hack is Active! Click to see status.
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
+    - cron: 5 0 * * *' # Runs every day at midnight UTC
   workflow_dispatch: # Allows manual trigger of the workflow
 
 jobs:
