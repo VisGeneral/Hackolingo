@@ -25,7 +25,7 @@ jobs:
 
       - name: Run XP Script
         env:
-          lessonsToComplete: 5
+          lessonsToComplete: 15
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
         run: npm run xp
