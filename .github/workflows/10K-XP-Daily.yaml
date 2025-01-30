@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -23,9 +22,13 @@ jobs:
       - name: Install Dependencies
         run: npm install node-fetch
 
+      - name: Generate random lesson count
+        id: generate_random
+        run: echo "lessons=$(($RANDOM % 16 + 5))" >> $GITHUB_OUTPUT
+
       - name: Run XP Script
         env:
-          lessonsToComplete: 15
+          lessonsToComplete: ${{ steps.generate_random.outputs.lessons }}
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
         run: npm run xp
