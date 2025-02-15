@@ -109,7 +109,7 @@ const init = async () => {
                         ...createdSession,
                         beginner: false,
                         challengeTimeTakenCutoff: 6000,
-                        startTime: (Date.now() - 60000) / 1000,
+                        startTime: (Date.now() - 20 * 60 * 1000) / 1000,
                         enableBonusPoints: true,
                         endTime: Date.now() / 1000,
                         failed: false,
