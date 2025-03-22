@@ -2,7 +2,6 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 const { getUserLanguages, headers, removeQuotes } = require('./helper.js');
 
 const init = async () => {
-    const lessonsToComplete = Number(process.env.lessonsToComplete) || 5;
     const token = removeQuotes(process.env.token);
     const userId = removeQuotes(process.env.userId);
 
@@ -16,64 +15,16 @@ const init = async () => {
 
         const sessionBody = {
             challengeTypes: [
-    "assist",
-    "characterIntro",
-    "characterMatch",
-    "characterPuzzle",
-    "characterSelect",
-    "characterTrace",
-    "characterWrite",
-    "completeReverseTranslation",
-    "definition",
-    "dialogue",
-    "extendedMatch",
-    "extendedListenMatch",
-    "form",
-    "freeResponse",
-    "gapFill",
-    "judge",
-    "listen",
-    "listenComplete",
-    "listenMatch",
-    "match",
-    "name",
-    "listenComprehension",
-    "listenIsolation",
-    "listenSpeak",
-    "listenTap",
-    "orderTapComplete",
-    "partialListen",
-    "partialReverseTranslate",
-    "patternTapComplete",
-    "radioBinary",
-    "radioImageSelect",
-    "radioListenMatch",
-    "radioListenRecognize",
-    "radioSelect",
-    "readComprehension",
-    "reverseAssist",
-    "sameDifferent",
-    "select",
-    "selectPronunciation",
-    "selectTranscription",
-    "svgPuzzle",
-    "syllableTap",
-    "syllableListenTap",
-    "speak",
-    "tapCloze",
-    "tapClozeTable",
-    "tapComplete",
-    "tapCompleteTable",
-    "tapDescribe",
-    "translate",
-    "transliterate",
-    "transliterationAssist",
-    "typeCloze",
-    "typeClozeTable",
-    "typeComplete",
-    "typeCompleteTable",
-    "writeComprehension"
-],
+                "assist", "characterIntro", "characterMatch", "characterPuzzle", "characterSelect", "characterTrace", "characterWrite",
+                "completeReverseTranslation", "definition", "dialogue", "extendedMatch", "extendedListenMatch", "form", "freeResponse",
+                "gapFill", "judge", "listen", "listenComplete", "listenMatch", "match", "name", "listenComprehension", "listenIsolation",
+                "listenSpeak", "listenTap", "orderTapComplete", "partialListen", "partialReverseTranslate", "patternTapComplete",
+                "radioBinary", "radioImageSelect", "radioListenMatch", "radioListenRecognize", "radioSelect", "readComprehension",
+                "reverseAssist", "sameDifferent", "select", "selectPronunciation", "selectTranscription", "svgPuzzle", "syllableTap",
+                "syllableListenTap", "speak", "tapCloze", "tapClozeTable", "tapComplete", "tapCompleteTable", "tapDescribe",
+                "translate", "transliterate", "transliterationAssist", "typeCloze", "typeClozeTable", "typeComplete", "typeCompleteTable",
+                "writeComprehension"
+            ],
             fromLanguage: userLanguages.fromLanguage,
             isFinalLevel: true,
             isV2: true,
@@ -86,11 +37,23 @@ const init = async () => {
             type: "LEGENDARY_LEVEL",
         };
 
-        for (let i = 0; i < lessonsToComplete; i++) {
-            const formattedFraction = `${i + 1}/${lessonsToComplete}`;
-            console.log(`Running: ${formattedFraction}`);
+        // Randomly choose a daily XP target between 2000 and 6000.
+        const totalDailyXP = Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000;
+        console.log(`Total Daily XP target: ${totalDailyXP}`);
+
+        let xpAccumulated = 0;
+        let sessionCount = 0;
+
+        while (xpAccumulated < totalDailyXP) {
+            sessionCount++;
+            const remainingXP = totalDailyXP - xpAccumulated;
+            const maxSessionXP = Math.min(200, remainingXP);
+            // Generate a random XP value between 1 and maxSessionXP (inclusive)
+            const sessionXP = Math.floor(Math.random() * maxSessionXP) + 1;
+            console.log(`Session ${sessionCount}: Awarding ${sessionXP} XP (remaining: ${remainingXP})`);
 
             try {
+                // Create a new practice session
                 const createdSession = await fetch("https://www.duolingo.com/2017-06-30/sessions", {
                     headers,
                     method: 'POST',
@@ -102,6 +65,7 @@ const init = async () => {
 
                 console.log(`Created Fake Duolingo Practice Session: ${createdSession.id}`);
 
+                // Submit the session with the generated XP for this session
                 const rewards = await fetch(`https://www.duolingo.com/2017-06-30/sessions/${createdSession.id}`, {
                     headers,
                     method: 'PUT',
@@ -121,7 +85,7 @@ const init = async () => {
                         sessionExperimentRecord: [],
                         sessionStartExperiments: [],
                         showBestTranslationInGradingRibbon: true,
-                        xpPromised: 201,
+                        xpPromised: sessionXP,
                     }),
                 }).then(res => {
                     if (!res.ok) {
@@ -133,11 +97,14 @@ const init = async () => {
                 });
 
                 console.log(`Submitted Spoof Practice Session Data - Received`);
-                console.log(`Congratulation you earned ${rewards.xpGain} XP!`);
+                console.log(`Congratulations, you earned ${rewards.xpGain} XP in this session!`);
+
+                xpAccumulated += sessionXP;
             } catch (err) {
-                console.error(`Error in lesson ${formattedFraction}: ${err}`);
+                console.error(`Error in session ${sessionCount}: ${err}`);
             }
         }
+        console.log(`Daily target achieved. Total XP accumulated: ${xpAccumulated} XP in ${sessionCount} sessions.`);
     } catch (err) {
         console.error(`Initialization failed: ${err}`);
     }
