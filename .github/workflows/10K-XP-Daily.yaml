@@ -3,7 +3,7 @@ run-name: Your hack is Active! Click to see status.
 
 on:
   schedule:
-    - cron: '5 18 * * *' # Runs every day at midnight UTC
+    - cron: '5 18 * * *' # Runs every day at 18:05 UTC
   workflow_dispatch:
 
 jobs:
@@ -22,13 +22,8 @@ jobs:
       - name: Install Dependencies
         run: npm install node-fetch
 
-      - name: Generate random lesson count
-        id: generate_random
-        run: echo "lessons=$(($RANDOM % 16 + 5))" >> $GITHUB_OUTPUT
-
       - name: Run XP Script
         env:
-          lessonsToComplete: ${{ steps.generate_random.outputs.lessons }}
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
         run: npm run xp
