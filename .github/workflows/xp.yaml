@@ -3,11 +3,7 @@ run-name: Your hack is Active! Click to see status.
 
 on:
   workflow_dispatch:
-    inputs:
-      lessonsToComplete:
-        description: 'How Many Lessons? (Each give 200 XP)'
-        required: true
-        default: 5
+
 
 jobs:
   complete_lesson:
@@ -28,7 +24,6 @@ jobs:
 
       - name: Run XP Script
         env:
-          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
         run: npm run xp
